@@ -1,0 +1,14 @@
+C:\Users\James\source\repos\bookstores\bookstores\bin\bookstores.dll.config
+C:\Users\James\source\repos\bookstores\bookstores\bin\bookstores.dll
+C:\Users\James\source\repos\bookstores\bookstores\bin\bookstores.pdb
+C:\Users\James\source\repos\bookstores\bookstores\obj\Debug\bookstores.csproj.CoreCompileInputs.cache
+C:\Users\James\source\repos\bookstores\bookstores\obj\Debug\bookstores.dll
+C:\Users\James\source\repos\bookstores\bookstores\obj\Debug\bookstores.pdb
+C:\Users\James\source\repos\bookstores\bookstores\obj\Debug\bookstores.csprojAssemblyReference.cache
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\bin\bookstores.dll.config
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\bin\bookstores.dll
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\bin\bookstores.pdb
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\obj\Debug\bookstores.csprojAssemblyReference.cache
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\obj\Debug\bookstores.csproj.CoreCompileInputs.cache
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\obj\Debug\bookstores.dll
+C:\Users\James\Documents\Προγραμμα Σπουδόν\Εξάμηνο 5ο\Ανάπτυξη Διαδικτυακών Συστ. και Εφαρμογών\Lab\ASP.NET\bookstores\bookstores\obj\Debug\bookstores.pdb
