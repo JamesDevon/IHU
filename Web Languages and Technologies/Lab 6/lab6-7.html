@@ -1,0 +1,16 @@
+<HTML>
+<HEAD>
+<TITLE>Listing 10-4</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function errorHandler(msg,url,line) {
+  strPrompt="Captured error : "+msg+"\n On line : "+line+"\n In : "+url+"."
+  alert(strPrompt)
+}
+window.onerror=errorHandler;
+</SCRIPT>
+</HEAD>
+<BODY>
+Clicking this button calls a non existent object.
+<FORM><INPUT TYPE="button" VALUE="Click Me" onclick="FakeO.use()"></FORM>
+</BODY>
+</HTML>

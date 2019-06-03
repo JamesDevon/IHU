@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<script type="text/javascript" src="jscript.js"></script>
+<title>Lab11-4</title>
+</head>
+
+<body>
+<label>Τίτλος : </label><input id="titlos" type="text"/>
+<br/>
+<label>Συγγραφής : </label><input id="suggrafis" type="text"/><br/>
+<label>Θεματικές Ενότητες :</label><input id="tnText" readonly="readonly" type="text"/><br/>
+<input onclick="showDiv()" type="button" value="Προσθήκη Θεματικής ενότητας"/> <input type="button" onclick="submit()" value="Υποβολή"/>
+<br/>
+<div style="display:none" id="thematikesEnotites">
+	<select id="tnSelect" name="Select1">
+				<option>Θεματική Ενότητα 1</option>
+				<option>Θεματική Ενότητα 2</option>
+				<option>Θεματική Ενότητα 3</option>
+				<option>Θεματική Ενότητα 4</option>
+				<option>Θεματική Ενότητα 5</option>
+			</select>
+			<br/>
+			<input onclick="insertThematikes()" type="button" value="Προσθήκη"/>
+			<input onclick="hideDiv()" type="button" value="Κλέισημο"/>
+</div>
+<label id="console"></label>
+</body>
+
+</html>

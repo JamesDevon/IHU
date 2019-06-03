@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="style.css" rel="stylesheet"/>
+<!-- #BeginEditable "doctitle" -->
+<title>Lab33-Layout1</title>
+<!-- #EndEditable -->
+</head>
+
+<body>
+<!-- Some random things from my library just to fill the pages -->
+<div class="top">
+<ol>
+    <li style="color:red; font-family:Arial; text-align:center;">This is the first item of the list </li>
+    <li style="color:red; font-family:Arial; text-align:center;">This is the second item of the list</li>
+        <ol>
+            <li style="color:blue; text-align:left; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">This is the first item of the sub-list</li>
+            <li style="color:blue; text-align:left; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">This is the second item of the sub-list </li>
+        </ol>
+    <li style="color:red; font-family:Arial; text-align:center;">This is the third item of the list </li>
+</ol>
+</div>
+<div class="left">
+<table border="1" style="width:200px; height:200px;">
+      <tr style="background-color:#c9b2a6">
+        <th ><b>Person</b></th>
+        <th ><b>Age</b></th>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Chris</td><td>38</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Dennis</td><td>45</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Sarah</td><td>29</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Karen</td><td>47</td>
+      </tr>
+    </table>
+    <table border="1" style="width:200px; height:200px;">
+      <tr style="background-color:#c9b2a6">
+        <th ><b>Person</b></th>
+        <th ><b>Age</b></th>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Chris</td><td>38</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Dennis</td><td>45</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Sarah</td><td>29</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Karen</td><td>47</td>
+      </tr>
+    </table>
+<table border="1" style="width:200px; height:200px;">
+      <tr style="background-color:#c9b2a6">
+        <th ><b>Person</b></th>
+        <th ><b>Age</b></th>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Chris</td><td>38</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Dennis</td><td>45</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Sarah</td><td>29</td>
+      </tr>
+      <tr>
+        <td style="background-color:#d8bdae">Karen</td><td>47</td>
+      </tr>
+    </table>
+</div>
+<div class="center">
+<img alt="" height="256" src="softwareEngineering.jpg" width="320" />
+		<h2>About Software Engineering II</h2>
+		<p>Το μάθημα συνιστά στις προηγμένες έννοιες της αντικειμενοστρεφούς 
+		τεχνολογίας.<br />
+		Συγκεκριμένα, το μάθημα επικεντρώνεται στην Αντικειμενοστρεφή τεχνολογία 
+		λογισμικού και ιδιαίτερα σε προηγμένες έννοιες αντικ/φών μεθόδων και 
+		τεχνικών, όπως είναι οι Ευέλικτες μέθοδοι, ηαξιολόγηση συστημάτων 
+		λογισμικούκαι ο έλεγχος.<br />
+		Με την επιτυχή ολοκλήρωση του μαθήματος ο φοιτητής / τρια θα είναι σε 
+		θέση να:<br />
+		1) <strong>Γνωρίζει</strong> τεχνικές, πρότυπα, αρχές και μεθόδους που 
+		συντελούν στην επίτευξη ποιοτικής σχεδίασης συστημάτων λογισμικού.<br />
+		2) <strong>Εφαρμόζει</strong> τεχνικές, αρχές και μεθόδους με σκοπό την 
+		αξιολόγηση της ποιότητας των συστημάτων λογισμικού<br />
+		3) <strong>Διακρίνει</strong> και <strong>εκτιμά</strong> τα μέρη ενός 
+		συστήματος που πιθανώς να δημιουργήσουν προβλήματα στο μέλλον, ώστε να 
+		αντιμετωπισθούν έγκαιρα<br />
+		4) <strong>Υπολογίζει</strong> με την χρήση μετρικών, προτύπων, ελέγχων 
+		και αρχών, την ποιότητας σχεδίασης ενός συστήματος λογισμικού<br />
+		5) <strong>Διακρίνει</strong> τη διαφορά μεταξύ ενός ποιοτικού 
+		συστήματος λογισμικού ή συστατικού και ενός που περιέχει προβλήματα 
+		σχεδιαστικά και υλοποίησης κώδικα<br />
+		6) <strong>Δημιουργεί/παράγει</strong> τεκμηριωμένες εκθέσεις που 
+		αφορούν την ποιότητα ενός συστήματος λογισμικού<br />
+		7) <strong>Εφαρμόζει/παράγει</strong> πρότυπα, ελέγχους και μετρικές 
+		λογισμικού με στόχο την επίτευξη το δυνατόν μεγαλύτερου βαθμού ποιότητας 
+		σχεδίασης<br />
+		8) <strong>Εξηγεί</strong> την σημασία της ύπαρξης κάθε τεχνικής που 
+		συντελεί στην ανάπτυξη ποιοτικών και εύκολα συντηρήσιμων συστημάτων 
+		λογισμικού</p>
+</div>
+<div class="bottom">
+<a style="color:red">Color Define</a>
+<br/>
+<a style="font-size:40">Size Define</a>
+<br><a style="font-family:Arial">Grammar</a>
+<br><a style="color:blue; font-size:50; font-family:Arial;">Mixed</a>
+</div>
+</body>
+
+
+</html>

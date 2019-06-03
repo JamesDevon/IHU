@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab10</title>
+<script type="text/javascript">
+function createTable(){
+var body = document.getElementsByTagName('body')[0];
+var tbl = document.createElement('table');
+tbl.style.width = '100%';
+tbl.setAttribute('border', '1');
+var rows = document.getElementById("row").value;
+var col = document.getElementById("col").value;
+tbl.insertRow(rows);
+tbl.insertRow(rows).insertCell(cel);
+body.appendChile(tbl);
+}
+
+</script>
+</head>
+
+<body>
+<label>Rows</label><input name="Text1" type="text" id="row"/>
+<br/><label>Collumns</label><input name="Text1" type="text" id="col"/>
+<br/>
+<button onclick="createTable()" name="Abutton1">Create Table</button>
+</body>
+
+</html>

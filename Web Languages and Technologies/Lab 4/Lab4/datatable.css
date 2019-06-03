@@ -1,0 +1,26 @@
+﻿.datatable{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.datatable td, .datatable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.datatable tr:nth-child(even){
+	background-color: #74ff33;
+	}
+
+.datatable tr:hover {
+	background-color: #ddd;
+	}
+
+.datatable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #42ff33;
+  color: white;
+}

@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<script type="text/javascript" src="jscript.js"></script>
+<title>Lab10-3</title>
+</head>
+
+<body onload="loadSelector()">
+<select id="select" name="Select1" onchange="view()">
+				<option></option>
+			</select>
+<br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+<p> Εργαστήριο 10: Μέθοδοι
+Άσκηση 1 - setInterval, clearInterval
+
+Μετατρέψτε το slide show που κανατε στην 1η άσκηση του προηγούμενου εργαστηρίου ώστε να υπάρχουν 2 κουμπία για έναρξη "Start" και σταμάτημα "Stop" του slide show που θα αλλάζει πλέον από μόνο του κάθε 1 δλ. τις εικόνες.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+http://www.w3schools.com/jsref/met_win_clearinterval.asp
+
+http://msdn.microsoft.com/en-us/library/ms536749(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536353(VS.85).aspx
+Άσκηση 2 - setTimeout, clearTimeout
+
+Εμπλουτίστε την προηγούμενη άσκηση προσθέτοντας ένα text box στο οποίο ο χρήστης θα πληκτρολογεί ένα χρονικό όριο σε δευτερόλεπτα μετά το οποίο το slide show θα σταματάει μόνο του. Προσθέστε επίσης ένα ακόμη κουμπί ώστε ο χρήστης να μπορεί να ακυρώσει το χρονικό όριο για το σταμάτημα του slide show που ορίζεται από το προηγούμενο text box.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_win_settimeout.asp
+http://www.w3schools.com/jsref/met_win_cleartimeout.asp
+
+http://msdn.microsoft.com/en-us/library/ms536753(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536357(VS.85).aspx
+Άσκηση 3 - createElement, scrollIntoView
+
+Δημιουργήστε ένα list box όπου με το άνοιγμα της σελίδας θα γεμίζει με τα κέιμενα από όλα τα P tags μίας σελίδας (50 πρώτοι χαρακτήρες από κάθε παράγραφο). Ακολούθως μόλις μία παράγραφος επιλέγεται από το list box το κείμενο της να γίνεται bold και να μετακινείται η σελίδα στην αρχή της παραγράφου.
+
+Σχετική βοηθεια:
+http://msdn.microsoft.com/en-us/library/ms536389(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536730(VS.85).aspx
+Άσκηση 4 - confirm
+
+Δημιουργήσετε ένα script το οποίο όταν φορτώνεται η σελίδα θα συνδέει για κάθε link το onclick γεγονός με μία συνάρτηση η οποία μόλις ενεργοποιείται κάποιος σύνδεσμος θα ρωταει το χρήστη αν πράγματι θέλει να ανοιχτεί η νέα σελίδα. Αν ο χρήστης λέει ΟΚ τότε ο σύνδεσμος ανοίγει. Αλλιώς (ΑΚΥΡΟ) η ενέργεια (άνοιγμα νέας σελίδας) ακυρώνεται.
+
+Σχετική βοηθεια:
+
+http://www.w3schools.com/jsref/met_win_confirm.asp
+
+Άσκηση 5 - insertRow, insertCell
+
+Δημιουργήσετε μία σελίδα με 2 text boxes και ένα κουμπί "Δημιούργησε πίνακα". Ο χρήστης πληκτρολογέι στα text boxes τον αριθμό των γραμμών και στηλών που θέλει και με το κουμπί δημιουργείται ένα πίνακας αντίστοιχων διαστάσεων.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_insertrow.asp
+http://www.w3schools.com/jsref/met_tablerow_insertcell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536457(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536455(VS.85).aspx
+Άσκηση 6 - deleteRow, deleteCell
+
+Εμπλουτίστε την προηγούμενη άσκηση με δύο ακόμα κουμπιά "Διέγραψε γραμμή" και "Διέγραψε στήλη" τα οποία θα διαγράφουν κάθε φορά την τελευταία γραμμή ή στήλη του πίνακα αντίστοιχα.
+
+Σχετική βοηθεια:
+http://www.w3schools.com/jsref/met_table_deleterow.asp
+http://www.w3schools.com/jsref/met_tablerow_deletecell.asp
+
+http://msdn.microsoft.com/en-us/library/ms536408(VS.85).aspx
+http://msdn.microsoft.com/en-us/library/ms536406(VS.85).aspx</p><br/>
+</body>
+
+</html>
