@@ -11,19 +11,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 
 def accuracy(tn , tp , fn, fp):
-    return (tp+tn+0.0000001)/(tp+tn+fp+fn+0.0000001)
+    return (tp+tn+0.00000000001)/(tp+tn+fp+fn+0.00000000001)
 
 def precision(tn , tp , fn, fp):
-    return (tp+0.0000001)/(tp+fp+0.0000001)
+    return (tp+0.00000000001)/(tp+fp+0.00000000001)
 
 def recall(tn , tp , fn, fp):
-    return (tp+0.0000001)/(tp+fn+0.0000001)
+    return (tp+0.00000000001)/(tp+fn+0.00000000001)
 
 def fmeasure(tn , tp , fn, fp):
-    return (precision(tn, tp, fn, fp)*recall(tn, tp, fn, fp)+0.0000001)/((precision(tn, tp, fn, fp)+recall(tn, tp, fn, fp)+0.0000001)/2)
+    return (precision(tn, tp, fn, fp)*recall(tn, tp, fn, fp)+0.00000000001)/((precision(tn, tp, fn, fp)+recall(tn, tp, fn, fp))/2+0.00000000001)
 
 def specificity(tn , tp , fn, fp):
-    return (tn+0.0000001/(tn+fp)+0.0000001)
+    return ((tn+0.00000000001)/(tn+fp+0.00000000001))
 
 def evaluate(t, predict, criterion):
     switcher= { "accuracy": accuracy, "precicion": precision, "recall": recall, "fmeasure" : fmeasure , "sensitivity": recall , "specificity":specificity }
@@ -72,15 +72,16 @@ def answer():
 
 #Main
 data = read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header=None).values
-x = data.shape
+numberOfAttributes = len(data[1])
+numberOfPatterns = len(data)
 x = np.matrix((data[:,0:4 ]) , dtype = 'float')
 plt.figure(1)
-plt.plot( x[0:50,0] , x[0:50,2] , 'bo')
-plt.plot( x[50:100,0] , x[50:100,2] , 'r*')
-plt.plot( x[100:150,0] , x[100:150,2] , 'g+')
+plt.plot( x[0:50,0] , x[0:50,2] , 'bo', label="Iris Setosa")
+plt.plot( x[50:100,0] , x[50:100,2] , 'r*' , label="Iris Versicolor")
+plt.plot( x[100:150,0] , x[100:150,2] , 'g+', label="Iris Virginica")
+plt.legend()
 plt.show(1)
-t = (150,1)
-t = np.zeros(t)
+t = np.zeros(numberOfPatterns)
 ans = 'y'
 while(ans == 'y' ):
     print('for Iris-setosa -> 1')

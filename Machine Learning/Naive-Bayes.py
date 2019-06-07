@@ -13,11 +13,15 @@ from sklearn.model_selection import train_test_split
 from scipy.stats import norm
 
 def nbTrain(x,t):
+    
     c0 = np.matrix([0,0,0,0])
     c1 = np.matrix([0,0,0,0])
     ekp = []
+    #Μέση τιμή C0,C1
     m = [[],[]]
+    #Διασπορά C0,C1
     s = [[],[]]
+    #Seperate patterns into 2 arrays (Class 0, Class 1)
     for i in range(len(t)):
         if(t[i]==0):
             c0 = np.vstack([c0 , x[i]])     
@@ -27,6 +31,7 @@ def nbTrain(x,t):
     c1 = np.delete(c1 , 0, 0)
     c0p = len(c0)
     c1p = len(c1)
+    #Εκ των προτέρων πιθανότητες
     ekp.append(c0p/len(x))
     ekp.append(c1p/len(x))
     for i in range(4):
@@ -39,11 +44,14 @@ def nbTrain(x,t):
     return model
 
 def nbPredict(x,model):
+    #Πιθανότητα Λ
     l = []
     predict = []
     for p in range(len(x)):
+        #Αρχικά
         l.append(model['prior'][1]/model['prior'][0])
         for i in range(4):
+            #Ενημέρωση του Λ με συνάρτηση norm.pdf()
             l[p]*=(norm.pdf(x[p,i] , loc = model['mu'][1][i] 
             , scale = model['sigma'][1][i])/norm.pdf(x[p,i] 
             , loc = model['mu'][0][i] , scale = model['sigma'][0][i]))
@@ -54,19 +62,19 @@ def nbPredict(x,model):
     return predict
 
 def accuracy(tn , tp , fn, fp):
-    return (tp+tn+0.0000001)/(tp+tn+fp+fn+0.0000001)
+    return (tp+tn+0.00000000001)/(tp+tn+fp+fn+0.00000000001)
 
 def precision(tn , tp , fn, fp):
-    return (tp+0.0000001)/(tp+fp+0.0000001)
+    return (tp+0.00000000001)/(tp+fp+0.00000000001)
 
 def recall(tn , tp , fn, fp):
-    return (tp+0.0000001)/(tp+fn+0.0000001)
+    return (tp+0.00000000001)/(tp+fn+0.00000000001)
 
 def fmeasure(tn , tp , fn, fp):
-    return (precision(tn, tp, fn, fp)*recall(tn, tp, fn, fp)+0.0000001)/((precision(tn, tp, fn, fp)+recall(tn, tp, fn, fp)+0.0000001)/2)
+    return (precision(tn, tp, fn, fp)*recall(tn, tp, fn, fp)+0.00000000001)/((precision(tn, tp, fn, fp)+recall(tn, tp, fn, fp))/2+0.00000000001)
 
 def specificity(tn , tp , fn, fp):
-    return (tn+0.0000001/(tn+fp)+0.0000001)
+    return ((tn+0.00000000001)/(tn+fp+0.00000000001))
 
 def evaluate(t, predict, criterion):
     switcher= { "accuracy": accuracy, "precicion": precision
@@ -112,20 +120,21 @@ def virginica():
 
 def answer():
     print('To continue press y , else n')
-    ans = raw_input("Answer : ")
+    ans = input("Answer : ")
     return ans
 
 #Main
 data = read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header=None).values
-x = data.shape
+numberOfAttributes = len(data[1])
+numberOfPatterns = len(data)
 x = np.matrix((data[:,0:4 ]) , dtype = 'float')
 plt.figure(1)
-plt.plot( x[0:50,0] , x[0:50,2] , 'bo')
-plt.plot( x[50:100,0] , x[50:100,2] , 'r*')
-plt.plot( x[100:150,0] , x[100:150,2] , 'g+')
+plt.plot( x[0:50,0] , x[0:50,2] , 'bo', label="Iris Setosa")
+plt.plot( x[50:100,0] , x[50:100,2] , 'r*' , label="Iris Versicolor")
+plt.plot( x[100:150,0] , x[100:150,2] , 'g+', label="Iris Virginica")
+plt.legend()
 plt.show(1)
-t = (150,1)
-t = np.zeros(t)
+t = np.zeros(numberOfPatterns)
 ans = 'y'
 while(ans == 'y' ):
     print('for Iris-setosa -> 1')
@@ -152,7 +161,7 @@ while(ans == 'y' ):
         predictTest = nbPredict(xtest , bayesModel)
         
         plt.subplot(3,3,i+1)
-        plt.plot(ttest[:,:] , 'b.')
+        plt.plot(ttest[:] , 'b.')
         plt.plot(predictTest[:] , 'ro' , fillstyle='none' , markersize=9.5)
         
         acc += evaluate(ttest , predictTest, "accuracy")

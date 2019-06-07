@@ -31,7 +31,7 @@ def regEvaluate(t, predict , criterion):
         value /= len(t)
     elif(criterion=="mae"):
         for i in range(len(t)):
-            value +=t[i]-predict[i]
+            value += abs(t[i]-predict[i])
         value /= len(t)
     return value
 
@@ -55,15 +55,14 @@ t = np.zeros((1,paterns))
 x = data[:,0:13]
 t = data[:,13]
 
+
 gamma=[0.0001, 0.001, 0.01, 0.1]
 c=[1, 10, 100, 1000]
-
 
 N=[5,10,20,30,40,50,100]
 ans = 'y'
 while(ans == 'y' ):
     plotIndex = 1
-    
     m = [[],[]]
     mseIndex = 0
     gammaMse = 0
@@ -71,9 +70,12 @@ while(ans == 'y' ):
     maeIndex = 0
     gammaMae = 0
     cMae = 0
+    #SVR
     for i in range(len(gamma)):
         for j in range(len(c)):
+            #Μέσο Τετραγωνικό Σφάλμα 
             mse = 0
+            #Μέσο Απόλυτο Σφάλμα
             mae = 0
             print("For C : "+str(c[j]))
             print("For gamma : "+str(gamma[i]))
@@ -88,7 +90,6 @@ while(ans == 'y' ):
                 plt.subplot(3,3,k+1)
                 plt.plot(ttest[:] , 'b-')
                 plt.plot(predictTest[:] , 'r.')
-                
             mse /= 9
             mae /= 9
             print("MSE : "+str(mse))
@@ -96,6 +97,7 @@ while(ans == 'y' ):
             
             m[0].append(mse)
             m[1].append(mae)
+            #Ευρεση ελαχηστου Μεσου Απολυτου και Τετραγωνικου Σφάλματος
             if(m[0][mseIndex]>m[0][len(m[0])-1]):
                 mseIndex = len(m[0])-1
                 lessMseSvr = m[0][mseIndex]
@@ -106,7 +108,7 @@ while(ans == 'y' ):
                 lessMaeSvr = m[1][maeIndex]
                 gammeMae = i
                 cMae = j
-                
+
             plt.show(plotIndex)
             plotIndex +=1
             print("-----------------------------------------------------")
@@ -116,6 +118,7 @@ while(ans == 'y' ):
     print("Μικρότερο MAE : "+str(lessMaeSvr)+" με C : "+str(c[cMae])+" kai gamma : "+str(gamma[gammaMae]))
     print("-----------------------------------------------------")
     print("For gamma : "+str(gamma[gammaMse])+" and c : "+str(c[cMse]))
+    #MLP
     xtrain , xtest , ttrain , ttest = train_test_split( x, t, test_size=0.1)
     model = SVR(kernel="rbf",gamma = gamma[gammaMse] , C = c[cMse])
     network = model.fit(xtrain,np.ravel(ttrain))
@@ -131,6 +134,9 @@ while(ans == 'y' ):
     m1 = [[],[]]
     nMae =0
     nMse = 0
+    print("-----------------------------------------------------")
+    print("-----------------------------------------------------")
+    print("Neural Network :")
     for i in range (len(N)):
         mse = 0
         mae = 0
@@ -176,7 +182,7 @@ while(ans == 'y' ):
         print("Mlp scored better at MSE with : "+str(lessMseMlp)+" while Svr scored : "+str(lessMseSvr))
     else:
         print("Svr scored better at MSE with : "+str(lessMseSvr)+" while Mlp scored : "+str(lessMseMlp))
-    if(lessMaeMlp<lessMseSvr):
+    if(lessMaeMlp>lessMseSvr):
         print("Mlp scored better at MAE with : "+str(lessMaeMlp)+" while Svr scored : "+str(lessMaeSvr))
     else:
         print("Svr scored better at MAE with : "+str(lessMaeSvr)+" while Mlp scored : "+str(lessMaeMlp))
