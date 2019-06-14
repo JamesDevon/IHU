@@ -117,5 +117,4 @@ function addToCart(evt){
         cart.rows[cart.rows.length-1].cells[1].innerHTML =price;
         cart.rows[cart.rows.length-1].cells[2].innerHTML =qnt;
     }
-    
 }
