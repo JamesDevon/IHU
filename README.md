@@ -3,9 +3,11 @@ Alexander Technological Institute of Thessaloniki Information Technology Departm
 
 University Lab Projects for Exercise.
 
-Algorithmic and Programming : </br>
- ●  Basics of algorithmic and programming principles.</br>
- ●  Understanding the environment and Java features.</br>
- ●  Programming experience capable of implementing simple algorithms and simple practical applications.</br>
- ●  Implementation of simple object-oriented programs.</br>
- ●  Background for further deepening the Object-Oriented Programming and learning other programming languages.</br>
+<b>Algorithmic and Programming :</b> </br>
+<ul>
+ <li>Basics of algorithmic and programming principles.</li>
+ <li>Understanding the environment and Java features.</li>
+ <li>Programming experience capable of implementing simple algorithms and simple practical applications.</li>
+ <li>Implementation of simple object-oriented programs.</li>
+ <li>Background for further deepening the Object-Oriented Programming and learning other programming languages.</li>
+</ul>
