@@ -39,7 +39,7 @@ What I Have Learned
     <li>Recognizes the rules of universal design of interactive systems.</li>
     <li>Implement user interfaces using specialized visual programming tools and user interface implementation techniques.</li>
     <li>Apply basic assessment methods to interactive systems.</li>
-    <li>Distinguish the most basic Knowledge Models and Models of Communication and Cooperation.</li>\
+    <li>Distinguish the most basic Knowledge Models and Models of Communication and Cooperation.</li>
 </ul>
 
 <b>Computer Networks</b>
@@ -48,7 +48,7 @@ What I Have Learned
     <li>Underwriting and overriding methodologies in real-world conditions for efficient use of IP addresses.</li>
     <li>Calculates addresses and station subnet-mask for successful connection and communication on the Internet.</li>
     <li>Evaluate the importance of having the TCP / IP model.</li>
-    <li>Distinguishe the differences in functionality and efficiency of the TCP / IP model from the OSI model.</li>\
+    <li>Distinguishe the differences in functionality and efficiency of the TCP / IP model from the OSI model.</li>
     <li>List the error correction procedures on the Internet.</li>
     <li>Distinguish the functionality of Network Layer.</li>
     <li>Determine the efficiency of Network Layer of ARP protocol.</li>
